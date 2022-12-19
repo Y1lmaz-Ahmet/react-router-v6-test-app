@@ -1,12 +1,25 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home";
 import BookList from "./components/BookList";
 export function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/books" element={<BookList />} />
-    </Routes>
+    <>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="books">Books</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        {/* Routes = container for holding individual Route */}
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<BookList />} />
+      </Routes>
+    </>
   );
 }
 
