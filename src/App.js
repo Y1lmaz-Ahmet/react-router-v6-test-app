@@ -1,8 +1,12 @@
-function App() {
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import BookList from "./components/BookList";
+export function App() {
   return (
-    <div className="App">
-      <h1>Hello world!</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/books" element={<BookList />} />
+    </Routes>
   );
 }
 
