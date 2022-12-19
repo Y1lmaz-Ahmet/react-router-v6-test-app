@@ -1,4 +1,4 @@
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 
 import Home from "./components/Home";
 import BookList from "./components/BookList";
@@ -6,12 +6,6 @@ import Book from "./components/Book";
 import NotFound from "./components/NotFound";
 import NewBook from "./components/NewBook";
 export function App() {
-  const activeStyle = {
-    backgroundColor: "green",
-  };
-  const notActive = {
-    backgroundColor: "purple",
-  };
   return (
     <>
       <nav
