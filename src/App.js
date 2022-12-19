@@ -1,19 +1,41 @@
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, NavLink } from "react-router-dom";
+
 import Home from "./components/Home";
 import BookList from "./components/BookList";
 import Book from "./components/Book";
 import NotFound from "./components/NotFound";
 import NewBook from "./components/NewBook";
 export function App() {
+  const activeStyle = {
+    backgroundColor: "green",
+  };
+  const notActive = {
+    backgroundColor: "purple",
+  };
   return (
     <>
-      <nav>
+      <nav
+        style={{
+          backgroundColor: "gray",
+          padding: 50,
+        }}
+      >
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink
+              to="/"
+              style={({ isActive }) => ({ color: isActive ? "red" : "orange" })}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="books">Books</Link>
+            <NavLink
+              to="books"
+              style={({ isActive }) => ({ color: isActive ? "red" : "orange" })}
+            >
+              Books
+            </NavLink>
           </li>
         </ul>
       </nav>
